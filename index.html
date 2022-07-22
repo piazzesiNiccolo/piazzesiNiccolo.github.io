@@ -1,45 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Niccolò Piazzesi</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"> 
-      </head>
-      <body>
-        <h1>Niccolò Piazzesi</h1>
-        
-        <p>Welcome!  I am Niccolò, a Computer Science student at the University of Pisa.  I really like  programming and I have  a particular interest in 
-          compilers, programming language theory and formal methods. I hope to focus on these topics during my career. 
-        </p>
-        
-        <p>Here you will find some of the things that i worked on.</p>
-        
-        <h3><a href="resume.pdf">My resume</a></h3>
-      <h2>Seminars</h2>
-      <ul>
-          <li> 
-              <div><a href="seminars/rewriting_logic.pdf">Conditional Rewriting Logic: from abstract model to concrete applications</a></div>
-              <div>A brief introduction to rewriting logic and its application to distributed databases</div>
-          </li>
-      </ul>
-      <h2>Papers</h2>
-      <ul>
-         <li>
-          <div><a href="https://arxiv.org/pdf/2202.12991.pdf" >Attack and Fault Injection in Self-driving Agents on the Carla Simulator – Experience Report</a></div>
-          <div>Piazzesi Niccolò, Massimo Hong, and Andrea Ceccarelli</div>
-          <div>International Conference on Computer Safety, Reliability, and Security</div>
-          <div>Springer, Cham, 2021</div>
-          </li>
-      </ul>
-      <h2>Contact me</h2>
-      <div>
-        <p>Mail: npiazzesi@gmail.com</p>
-        <p>Github <a href="https://www.github.com/piazzesiNiccolo">piazzesiNiccolo</a></p>
-        <p>Linkedin: <a href="https://www.linkedin.com/in/npiazzesi22/ ">npiazzesi22</a></p>
-      </div>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Niccolò Piazzesi</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
 
+		<script
+			src="https://kit.fontawesome.com/887ceaad49.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			tailwind.config = {
+				theme: {
+					theme: {
+						container: {
+							center: true,
+						},
+					},
+					extend: {
+						colors: {
+							ocean: "#073642",
+							ultragray: "#657b83",
+							hoverGray: "#93a1a1",
+							cream: "#fdf6e3",
+						},
+					},
+				},
+			};
+		</script>
+	</head>
+	<body class="bg-cream h-screen">
+		<!--NAVBAR-->
+		<!-- <nav class="flex items-center justify-center py-12">
+			<a
+				class="px-8 text-xl uppercase font-black text-ocean hover:underline underline underline-offset-4 tracking-widest"
+				href="index.html"
+				>Home</a
+			>
+			<a
+				class="px-8 text-xl uppercase font-black text-ocean hover:underline underline-offset-4 tracking-widest"
+				href="portfolio.html"
+				>Portfolio</a
+			>
+			<a
+				class="px-8 text-xl uppercase font-black text-ocean hover:underline underline-offset-4 tracking-widest"
+				href="contacts.html"
+				>Contacts</a
+			>
+		</nav>
+ -->
+		<div class="container m-auto py-32 px-16 h-full">
+			<section>
+				<h1
+					class="text-7xl text-ocean pt-12 pb-8 font-black text-center uppercase tracking-widest"
+				>
+					Niccolò Piazzesi
+				</h1>
+
+				<p class="text-ocean text-center text-xl">
+					Welcome! I am Niccolò, a Computer Science student at the University of
+					Pisa. I really like programming and I have a particular interest in
+					compilers, programming language theory and formal methods. I hope to
+					focus on these topics during my career. Here you will find some of the
+					things that i worked on.
+				</p>
+			</section>
+
+			<section>
+				<h2
+					class="text-4xl text-ocean pt-12 pb-6 font-medium text-center uppercase font-extrabold tracking-widest"
+				>
+					Seminars
+				</h2>
+
+				<div class="flex flex-col items-center justify-center">
+					<a
+						class="text-center text-ultragray underline text-xl font-bold"
+						href="seminars/rewriting_logic.pdf"
+						>Conditional Rewriting Logic: from abstract model to concrete
+						applications</a
+					>
+					<span class="font-semibold">
+						A brief introduction to rewriting logic and its application to
+						distributed databases
+					</span>
+				</div>
+			</section>
+
+			<section>
+				<h2
+					class="text-4xl text-ocean pt-12 pb-6 font-medium text-center uppercase font-extrabold tracking-widest"
+				>
+					Papers
+				</h2>
+
+				<div class="flex flex-col items-center justify-center">
+					<a
+						class="text-center text-ultragray underline text-xl font-bold"
+						href="seminars/rewriting_logic.pdf"
+						>Attack and Fault Injection in Self-driving Agents on the Carla
+						Simulator - Experience Report</a
+					>
+					<address>
+						Piazzesi Niccolò, Massimo Hong, and Andrea Ceccarelli
+					</address>
+					<address>
+						International Conference on Computer Safety, Reliability, and
+						Security
+					</address>
+					<address>Springer, Cham, 2021</address>
+				</div>
+			</section>
+
+			<section>
+				<div class="flex flex-col items-center justify-center">
+					<div class="flex items-center justify-center py-8 text-3xl gap-x-16">
+						<a href="mailto:npiazzesi@gmail.com"
+							><i class="fa-solid fa-envelope"> </i
+						></a>
+						<a target="_blank" href="https://www.github.com/piazzesiNiccolo"
+							><i class="fa-brands fa-github"></i
+						></a>
+						<a target="_blank" href="https://www.linkedin.com/in/npiazzesi22/"
+							><i class="fa-brands fa-linkedin"></i
+						></a>
+					</div>
+					<h5
+						class="mt-2 text-center px-8 text-lg uppercase font-black text-ocean hover:underline underline underline-offset-4 tracking-widest"
+					>
+						<a href="resume.pdf" target="_blank">My resume</a>
+					</h5>
+				</div>
+			</section>
+		</div>
+	</body>
 </html>
