@@ -5,8 +5,8 @@ import org.jetbrains.compose.web.renderComposable
 import org.niccolo.website.style.Website
 
 fun main() {
-  renderComposable(rootElementId = "root") {
-    Style(Website)
-    Website()
-  }
+    renderComposable(rootElementId = "root") {
+        Style(Website)
+        Website()
+    }
 }

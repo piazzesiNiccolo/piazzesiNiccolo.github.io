@@ -7,5 +7,5 @@ import org.niccolo.website.style.Content.name
 
 @Composable
 fun Name() {
-  Div(attrs = { classes(name) }) { Text("Niccolò Piazzesi") }
+    Div(attrs = { classes(name) }) { Text("Niccolò Piazzesi") }
 }

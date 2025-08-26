@@ -17,26 +17,33 @@ import org.jetbrains.compose.web.css.textAlign
 import org.jetbrains.compose.web.css.width
 
 object Content : StyleSheet() {
-  val name by style {
-    width(100.percent)
-    paddingTop(50.px)
-    fontSize(3.em)
-    fontWeight(300)
-    fontFamily(
-        "Roboto Slab", "Lato", "Roboto", "Helvetica Neue", "Helvetica", "Arial", "sans-serif")
+    val name by style {
+        width(100.percent)
+        paddingTop(50.px)
+        fontSize(3.em)
+        fontWeight(300)
+        fontFamily(
+            "Roboto Slab",
+            "Lato",
+            "Roboto",
+            "Helvetica Neue",
+            "Helvetica",
+            "Arial",
+            "sans-serif",
+        )
 
-    centeredOnPhone(default = "right")
-  }
-
-  private fun CSSBuilder.centeredOnPhone(default: String) {
-    textAlign(default)
-
-    onPhone { textAlign("center") }
-  }
-
-  private inline fun CSSBuilder.onPhone(crossinline builder: CSSBuilder.() -> Unit) {
-    media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Screen) and mediaMaxWidth(699.px)) {
-      self style { builder() }
+        centeredOnPhone(default = "right")
     }
-  }
+
+    private fun CSSBuilder.centeredOnPhone(default: String) {
+        textAlign(default)
+
+        onPhone { textAlign("center") }
+    }
+
+    private inline fun CSSBuilder.onPhone(crossinline builder: CSSBuilder.() -> Unit) {
+        media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Screen) and mediaMaxWidth(699.px)) {
+            self style { builder() }
+        }
+    }
 }

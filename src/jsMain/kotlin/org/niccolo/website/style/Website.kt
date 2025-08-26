@@ -19,36 +19,36 @@ import org.jetbrains.compose.web.css.textDecorationThickness
 import org.jetbrains.compose.web.css.width
 
 object Website : StyleSheet() {
-  init {
-    "@page" style { margin(0.px) }
+    init {
+        "@page" style { margin(0.px) }
 
-    group(type("html"), type("body")) style
-        {
-          width(100.percent)
-          height(100.percent)
-          margin(0.px)
-          padding(0.px)
-          color(Color("#333333"))
+        group(type("html"), type("body")) style
+            {
+                width(100.percent)
+                height(100.percent)
+                margin(0.px)
+                padding(0.px)
+                color(Color("#333333"))
+            }
+
+        type("body") style
+            {
+                overflow("visible")
+                fontFamily("Roboto", "Helvetica Neue", "Helvetica", "Arial", "sans-serif")
+            }
+
+        type("a") style
+            {
+                textDecoration("underline")
+                textDecorationStyle("dashed")
+                textDecorationLine("underline")
+                textDecorationThickness("1px")
+                property("text-underline-position", "under")
+                color(Color("#333333"))
+            }
+
+        media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Print)) {
+            type("a") style { textDecoration("none") }
         }
-
-    type("body") style
-        {
-          overflow("visible")
-          fontFamily("Roboto", "Helvetica Neue", "Helvetica", "Arial", "sans-serif")
-        }
-
-    type("a") style
-        {
-          textDecoration("underline")
-          textDecorationStyle("dashed")
-          textDecorationLine("underline")
-          textDecorationThickness("1px")
-          property("text-underline-position", "under")
-          color(Color("#333333"))
-        }
-
-    media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Print)) {
-      type("a") style { textDecoration("none") }
     }
-  }
 }

@@ -1,6 +1,6 @@
 package org.niccolo.website
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
@@ -12,14 +12,13 @@ import org.w3c.dom.HTMLElement
 fun Website(
     attrs: AttrBuilderContext<HTMLElement>? = null,
 ) {
-
-  Div {
-    Name()
-    Links()
-  }
-  Div {
-    Div { Text("Education") }
-    Div { Text("Work") }
-    Div { Text("Projects and talks") }
-  }
+    Div {
+        Name()
+        Links()
+    }
+    Div {
+        Div { Text("Education") }
+        Div { Text("Work") }
+        Div { Text("Projects and talks") }
+    }
 }
