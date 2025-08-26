@@ -1,4 +1,4 @@
-package org.niccolo.website.website
+package org.niccolo.website
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
