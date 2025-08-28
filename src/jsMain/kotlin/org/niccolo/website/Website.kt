@@ -1,24 +1,64 @@
 package org.niccolo.website
 
 import androidx.compose.runtime.Composable
+import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.dom.AttrBuilderContext
-import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.H2
+import org.jetbrains.compose.web.dom.H3
+import org.jetbrains.compose.web.dom.H4
+import org.jetbrains.compose.web.dom.Header
+import org.jetbrains.compose.web.dom.Li
+import org.jetbrains.compose.web.dom.Main
+import org.jetbrains.compose.web.dom.P
+import org.jetbrains.compose.web.dom.Section
+import org.jetbrains.compose.web.dom.Style
 import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.Ul
 import org.niccolo.website.composables.Links
 import org.niccolo.website.composables.Name
+import org.niccolo.website.style.Content
+import org.niccolo.website.style.Content.about
+import org.niccolo.website.style.Content.column
+import org.niccolo.website.style.Content.content
+import org.niccolo.website.style.Content.experience
+import org.niccolo.website.style.Content.header
+import org.niccolo.website.style.Content.projects
 import org.w3c.dom.HTMLElement
 
 @Composable
-fun Website(
-    attrs: AttrBuilderContext<HTMLElement>? = null,
-) {
-    Div {
+fun Website(attrs: AttrBuilderContext<HTMLElement>? = null) {
+    Style(Content)
+    Header(attrs = { classes(header) }) {
         Name()
         Links()
     }
-    Div {
-        Div { Text("Education") }
-        Div { Text("Work") }
-        Div { Text("Projects and talks") }
+    Main(attrs = { classes(content) }) {
+        Section(attrs = { classes(column, about) }) { About() }
+        Section(attrs = { classes(column, experience) }) { Experience() }
+        Section(attrs = { classes(column, projects) }) { ProjectsAndSeminars() }
     }
+}
+
+@Composable
+fun ProjectsAndSeminars() {
+    H2 { Text("Projects") }
+    P { Text("Seminars") }
+}
+
+@Composable
+fun Experience() {
+    H2 { Text("Experience and Education") }
+    H3 { Text("Msc in Computer Science") }
+    H4 { Text("Main Topics") }
+    Ul {
+        Li { Text("Compilers and Interpreters") }
+        Li { Text("Software verification") }
+        Li { Text("Programming Language Theory applied to cybersecurity") }
+    }
+}
+
+@Composable
+fun About() {
+    H2 { Text("About Me") }
+    P { Text("About Me") }
 }
