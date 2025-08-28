@@ -91,6 +91,7 @@ object Content : StyleSheet() {
         alignItems(AlignItems.FlexStart)
         gap(20.px)
         padding(20.px)
+        onPhone { flexDirection(FlexDirection.Column) }
     }
     val column by style {
         padding(15.px)
@@ -112,7 +113,7 @@ object Content : StyleSheet() {
     }
 
     private inline fun CSSBuilder.onPhone(crossinline builder: CSSBuilder.() -> Unit) {
-        media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Screen) and mediaMaxWidth(699.px)) {
+        media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Screen) and mediaMaxWidth(900.px)) {
             self style { builder() }
         }
     }
