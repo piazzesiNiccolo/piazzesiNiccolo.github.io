@@ -11,6 +11,7 @@ import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.and
+import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.cssRem
@@ -96,6 +97,7 @@ object Content : StyleSheet() {
     val column by style {
         padding(15.px)
         borderRadius(8.px)
+        backgroundColor(Color("#fdf6dd"))
     }
     val about by style {
         flex(1)

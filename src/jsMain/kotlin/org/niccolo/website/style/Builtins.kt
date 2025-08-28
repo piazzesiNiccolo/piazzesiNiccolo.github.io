@@ -23,7 +23,7 @@ import org.jetbrains.compose.web.css.textDecorationThickness
 import org.jetbrains.compose.web.css.vh
 import org.jetbrains.compose.web.css.width
 
-object HtmlTags : StyleSheet() {
+object Builtins : StyleSheet() {
     init {
         "@page" style { margin(0.px) }
 
