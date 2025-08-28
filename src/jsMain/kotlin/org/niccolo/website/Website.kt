@@ -2,6 +2,7 @@ package org.niccolo.website
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.Style
+import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.H3
@@ -9,7 +10,6 @@ import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.Header
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Main
-import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Section
 import org.jetbrains.compose.web.dom.Style
 import org.jetbrains.compose.web.dom.Text
@@ -42,12 +42,16 @@ fun Website(attrs: AttrBuilderContext<HTMLElement>? = null) {
 @Composable
 fun ProjectsAndSeminars() {
     H2 { Text("Projects") }
-    P { Text("Seminars") }
+    Ul {
+        Li { A(href = "https://github.com/niccolo") { Text("This website, built with compose multiplatform") } }
+    }
+    H2 { Text("Seminars") }
 }
 
 @Composable
 fun Experience() {
-    H2 { Text("Experience and Education") }
+    H2 { Text("Experience") }
+    H2 { Text("Education") }
     H3 { Text("Msc in Computer Science") }
     H4 { Text("Main Topics") }
     Ul {
@@ -60,5 +64,5 @@ fun Experience() {
 @Composable
 fun About() {
     H2 { Text("About Me") }
-    P { Text("About Me") }
+    H2 { Text("Skills") }
 }
