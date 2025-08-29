@@ -48,12 +48,10 @@ object Content : StyleSheet() {
         justifyContent(JustifyContent.Center)
         alignItems(AlignItems.Center)
         padding(24.px, 1.px)
-        textAlign("center")
+        centeredOnPhone("center")
     }
     val links by style {
         margin(20.px, 0.px, 0.px, 0.px)
-
-        centeredOnPhone(default = "right")
 
         style(type("svg")) {
             padding(5.px)

@@ -44,20 +44,21 @@ object Builtins : StyleSheet() {
                 fontFamily("Roboto", "Helvetica Neue", "Helvetica", "Arial", "sans-serif")
             }
 
-        type("a") style
-            {
-                textDecoration("underline")
-                textDecorationStyle("dashed")
-                textDecorationLine("underline")
-                textDecorationThickness("1px")
-                margin(0.px, 10.px, 0.px, 0.px)
-                property("text-underline-position", "under")
-                color(Color("#333333"))
-            }
+        type("a") style {
+            textDecoration("underline")
+            textDecorationStyle("dashed")
+            textDecorationLine("underline")
+            textDecorationThickness("1px")
+            margin(0.px, 10.px, 0.px, 0.px)
+            property("text-underline-position", "under")
+            color(Color("#333333"))
+        }
+
         type("h1") style {
             margin(0.px)
             fontSize(2.5.cssRem)
         }
+
         media(CSSMediaQuery.MediaType(CSSMediaQuery.MediaType.Enum.Print)) {
             type("a") style { textDecoration("none") }
         }
