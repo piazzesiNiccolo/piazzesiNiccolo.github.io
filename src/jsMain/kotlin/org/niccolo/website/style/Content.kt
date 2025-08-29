@@ -26,6 +26,7 @@ import org.jetbrains.compose.web.css.fontWeight
 import org.jetbrains.compose.web.css.gap
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.justifyContent
+import org.jetbrains.compose.web.css.lineHeight
 import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.marginRight
 import org.jetbrains.compose.web.css.media
@@ -103,8 +104,22 @@ object Content : StyleSheet() {
     val experience by style {
         flex(2)
     }
-    val projects by style {
-        flex(1)
+
+    val dot by style {
+        height(25.px)
+        width(25.px)
+        borderRadius(50.percent)
+        display(InlineBlock)
+    }
+
+    val job by style {
+        fontSize(0.8.em)
+        lineHeight(1.5.em)
+    }
+
+    val skill by style {
+        width(96.px)
+        display(InlineBlock)
     }
     private fun CSSBuilder.centeredOnPhone(default: String) {
         textAlign(default)

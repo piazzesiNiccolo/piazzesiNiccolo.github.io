@@ -28,15 +28,25 @@ fun WebsiteBody() {
 }
 
 @Composable
-fun ProjectsAndSeminars() {
-}
-
-@Composable
 fun Experience() {
     H2 { Text("Experience") }
     Section {
-        Text("2023–Present • Working on mobile application security.")
+        Text("2023–Present • Guardsquare")
+        Br()
+        Text("Working on mobile application security.")
+        Text("TODO")
     }
+}
+
+@Composable
+fun About() {
+    Description()
+    Skills()
+    Education()
+}
+
+@Composable
+private fun Education() {
     H2 { Text("Education") }
     H3 { Text("Msc in Computer Science") }
     H4 { Text("2020–2022 • University of Pisa ") }
@@ -47,11 +57,17 @@ fun Experience() {
         Li { Text("Programming Language Theory applied to cybersecurity") }
     }
     H3 { Text("Bsc in Computer Science") }
-    P { Text("2017–2020 • University of Florence ") }
+    H4 { Text("2017–2020 • University of Florence ") }
 }
 
 @Composable
-fun About() {
+private fun Skills() {
+    H2 { Text("Skills") }
+    P { Text("TODO") }
+}
+
+@Composable
+private fun Description() {
     H2 { Text("About Me") }
     P {
         Text("Hi! I am a software engineer, mostly focused on compilers and programming language internals.")
@@ -59,13 +75,5 @@ fun About() {
         Text("I currently work at ")
         A(href = "https://www.guardsquare.com/", attrs = { style { margin(0.px) } }) { Text("Guardsquare, ") }
         Text("applying concepts and methodologies from compiler engineering to mobile application security.")
-    }
-    H2 { Text("Skills") }
-    P { Text("TODO") }
-    H2 { Text("Personal work") }
-    Ul {
-        Li { A(href = "https://github.com/niccolo") { Text("This website, built with compose multiplatform") } }
-        Br()
-        Li { A(href = "https://github.com/niccolo") { Text("A toy compiler for a subset of the C language, built with Ocaml and LLVM.") } }
     }
 }
