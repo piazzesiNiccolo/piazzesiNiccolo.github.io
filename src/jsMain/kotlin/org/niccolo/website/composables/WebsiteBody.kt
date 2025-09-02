@@ -24,14 +24,17 @@ import org.niccolo.website.style.Content.skill
 fun WebsiteBody() {
     Main(attrs = { classes(content) }) {
         Section(attrs = { classes(column, about) }) { About() }
-        Section(attrs = { classes(column, experience) }) { Experience() }
+        Section(attrs = { classes(column, experience) }) {
+            Experience()
+            Education()
+        }
         Section(attrs = { classes(column, about) }) { Skills() }
     }
 }
 
 @Composable
 fun Experience() {
-    H2 { Text("Experience") }
+    H2 { Text("Work") }
     Section {
         Text("2023–Present • Guardsquare")
         Br()
@@ -62,7 +65,6 @@ fun Experience() {
 @Composable
 fun About() {
     Description()
-    Education()
 }
 
 @Composable

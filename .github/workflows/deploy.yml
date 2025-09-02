@@ -1,0 +1,39 @@
+name: deploy.yml
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "⚙️ Set up JDK 21"
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: "Setup Gradle"
+        uses: gradle/actions/setup-gradle@v4
+      - name: "Build website"
+        run: ./gradlew jsBrowserDistribution
+
+      - name: "Configure GitHub Pages"
+        uses: actions/configure-pages@v5
+
+      - name: "Upload GitHub Pages artifact"
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build/dist/js/productionExecutable
+
+      - name: "Deploy to GitHub Pages"
+        id: deployment
+        uses: actions/deploy-pages@v4
