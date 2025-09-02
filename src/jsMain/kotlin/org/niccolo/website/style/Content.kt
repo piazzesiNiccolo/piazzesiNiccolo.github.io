@@ -11,7 +11,6 @@ import org.jetbrains.compose.web.css.JustifyContent
 import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.and
-import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.cssRem
@@ -51,8 +50,14 @@ object Content : StyleSheet() {
         padding(24.px, 1.px)
         centeredOnPhone("center")
     }
+
     val links by style {
-        margin(20.px, 0.px, 0.px, 0.px)
+        margin(10.px, 0.px, 0.px, 0.px)
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        onPhone {
+            flexDirection(FlexDirection.Column)
+        }
 
         style(type("svg")) {
             padding(5.px)
@@ -67,9 +72,16 @@ object Content : StyleSheet() {
             property("vertical-align", "middle")
         }
     }
+    val personalLink by style {
+        display(DisplayStyle.Flex)
+        flexDirection(FlexDirection.Row)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
+        paddingTop(20.px)
+    }
     val name by style {
         width(100.percent)
-        paddingTop(50.px)
+        paddingTop(20.px)
         fontSize(3.em)
         fontWeight(300)
         fontFamily(
@@ -96,20 +108,12 @@ object Content : StyleSheet() {
     val column by style {
         padding(15.px)
         borderRadius(8.px)
-        backgroundColor(Color("#fdf6dd"))
     }
     val about by style {
         flex(1)
     }
     val experience by style {
         flex(2)
-    }
-
-    val dot by style {
-        height(25.px)
-        width(25.px)
-        borderRadius(50.percent)
-        display(InlineBlock)
     }
 
     val job by style {
