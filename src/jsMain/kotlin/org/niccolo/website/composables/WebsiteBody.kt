@@ -1,34 +1,38 @@
 package org.niccolo.website.composables
 
 import androidx.compose.runtime.Composable
+import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.Blockquote
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.ElementScope
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.Main
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Section
+import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
-import org.niccolo.website.style.Content.about
 import org.niccolo.website.style.Content.column
 import org.niccolo.website.style.Content.content
-import org.niccolo.website.style.Content.experience
 import org.niccolo.website.style.Content.job
+import org.niccolo.website.style.Content.jobTime
 import org.niccolo.website.style.Content.skill
+import org.w3c.dom.HTMLSpanElement
 
 @Composable
 fun WebsiteBody() {
     Main(attrs = { classes(content) }) {
-        Section(attrs = { classes(column, about) }) { About() }
-        Section(attrs = { classes(column, experience) }) {
+        Section(attrs = { classes(column) }) { About() }
+        Section(attrs = { classes(column) }) {
             Experience()
             Education()
         }
-        Section(attrs = { classes(column, about) }) { Skills() }
+        Section(attrs = { classes(column) }) { Skills() }
     }
 }
 
@@ -36,8 +40,9 @@ fun WebsiteBody() {
 fun Experience() {
     H2 { Text("Work") }
     Section {
-        Text("2023–Present • Guardsquare")
-        Br()
+        JobLine {
+            Text("2023 – Present • Guardsquare")
+        }
         P {
             Text("Working on the Android mobile app protection tool")
             A(
@@ -71,13 +76,13 @@ fun About() {
 private fun Education() {
     H2 { Text("Education") }
     H3 { Text("Msc in Computer Science") }
-    P { Text("2020–2022 • University of Pisa ") }
+    JobLine { Text("2020–2022 • University of Pisa ") }
     H4 { Text("Main Topics") }
     P {
         Text("Compilers and Interpreters, Software verification, Programming Language Theory applied to cybersecurity")
     }
     H3 { Text("Bsc in Computer Science") }
-    P { Text("2017–2020 • University of Florence ") }
+    JobLine { Text("2017–2020 • University of Florence ") }
 }
 
 @Composable
@@ -85,7 +90,6 @@ private fun Skills() {
     Div(attrs = { classes(skill, job) })
     H2 { Text("Skills") }
     P { Text("Java, Kotlin, Android Runtime internals, JVM internals, Gradle, Git, Ci/CD systems.") }
-    H3 { Text("Tools") }
     P { Text("Reverse engineering tools (JADX, Ghidra, apktool)") }
 }
 
@@ -99,5 +103,13 @@ private fun Description() {
         Text("I currently work at ")
         A(href = "https://www.guardsquare.com/", attrs = { style { margin(0.px) } }) { Text("Guardsquare, ") }
         Text("applying concepts and methodologies from compiler engineering to mobile application security.")
+    }
+}
+
+
+@Composable
+private fun JobLine(content: @Composable (ElementScope<HTMLSpanElement>.() -> Unit)) {
+    Span(attrs = {classes(jobTime)}) {
+        content()
     }
 }

@@ -41,7 +41,7 @@ object Content : StyleSheet() {
     val header by style {
         style(type("h1")) {
             margin(0.px)
-            fontSize(2.5.cssRem)
+            fontWeight(800)
         }
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
@@ -101,19 +101,28 @@ object Content : StyleSheet() {
         display(DisplayStyle.Flex)
         justifyContent(JustifyContent.SpaceBetween)
         alignItems(AlignItems.FlexStart)
-        gap(20.px)
-        padding(20.px)
-        onPhone { flexDirection(FlexDirection.Column) }
+        padding(16.px)
+        fontSize(1.em)
+        onPhone {
+            flexDirection(FlexDirection.Column)
+            justifyContent(JustifyContent.Center)
+            alignItems(AlignItems.Center)
+            textAlign("center")
+            padding(0.px)
+            fontSize(1.2.em)
+        }
     }
     val column by style {
         padding(15.px)
         borderRadius(8.px)
-    }
-    val about by style {
         flex(1)
     }
-    val experience by style {
-        flex(2)
+
+
+
+    val jobTime by style {
+        fontStyle("italic")
+        color(Color.gray)
     }
 
     val job by style {
@@ -137,3 +146,4 @@ object Content : StyleSheet() {
         }
     }
 }
+
