@@ -13,7 +13,6 @@ import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.and
 import org.jetbrains.compose.web.css.borderRadius
 import org.jetbrains.compose.web.css.color
-import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.display
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.flex
@@ -22,7 +21,6 @@ import org.jetbrains.compose.web.css.fontFamily
 import org.jetbrains.compose.web.css.fontSize
 import org.jetbrains.compose.web.css.fontStyle
 import org.jetbrains.compose.web.css.fontWeight
-import org.jetbrains.compose.web.css.gap
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.css.lineHeight
@@ -118,8 +116,6 @@ object Content : StyleSheet() {
         flex(1)
     }
 
-
-
     val jobTime by style {
         fontStyle("italic")
         color(Color.gray)
@@ -146,4 +142,3 @@ object Content : StyleSheet() {
         }
     }
 }
-

@@ -1,12 +1,9 @@
 package org.niccolo.website.composables
 
 import androidx.compose.runtime.Composable
-import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.css.margin
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Blockquote
-import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.ElementScope
 import org.jetbrains.compose.web.dom.H2
@@ -106,10 +103,9 @@ private fun Description() {
     }
 }
 
-
 @Composable
 private fun JobLine(content: @Composable (ElementScope<HTMLSpanElement>.() -> Unit)) {
-    Span(attrs = {classes(jobTime)}) {
+    Span(attrs = { classes(jobTime) }) {
         content()
     }
 }
